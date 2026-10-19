@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Юлія Гончарова — Дизайнер інтер'єрів | juliadesign_interior</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ===== ШАПКА ===== -->
+    <header class="header">
+        <a href="#" class="logo">
+            <span class="logo-main">juliadesign</span>
+            <span class="logo-sub">interior</span>
+        </a>
+
+        <nav class="nav">
+            <a href="#portfolio" data-lang-key="nav_works">Роботи</a>
+            <a href="#about" data-lang-key="nav_about">Про мене</a>
+            <a href="#contact" data-lang-key="nav_contact">Контакти</a>
+        </nav>
+
+        <div class="header-right">
+            <!-- Переключатель языка -->
+            <div class="lang-switch">
+                <button class="lang-btn" data-lang="uk" onclick="setLang('uk')">UA</button>
+                <span class="lang-divider">/</span>
+                <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+            </div>
+
+            <a href="#contact" class="btn btn-small" data-lang-key="btn_book">Записатися</a>
+        </div>
+    </header>
+
+    <!-- ===== ОБЛОЖКА ===== -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-subtitle" data-lang-key="hero_subtitle">Дизайн інтер'єрів · Онлайн</p>
+            <h1 class="hero-title" data-lang-key="hero_title">
+                Створюю простори,<br>
+                у яких хочеться жити
+            </h1>
+            <p class="hero-text" data-lang-key="hero_text">
+                Мене звати Юлія. Допомагаю створити затишний і функціональний інтер'єр —
+                від ідеї до реалізації. Працюю з житловими та комерційними просторами.
+            </p>
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn btn-primary" data-lang-key="btn_portfolio">Дивитися роботи</a>
+                <a href="#contact" class="btn btn-outline" data-lang-key="btn_consult">Онлайн-консультація</a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="images/hero.jpg" alt="Інтер'єр від juliadesign_interior">
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
