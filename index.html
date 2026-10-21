@@ -58,7 +58,35 @@
             <img src="images/hero.jpg" alt="Інтер'єр від juliadesign_interior">
         </div>
     </section>
+        <!-- ===== СЕКЦИЯ КОНТАКТОВ ===== -->
+    <section class="contact-section" id="contact" style="padding: 80px 6vw; background: #fff;">
+        <div class="hero-content" style="max-width: 600px; margin: 0 auto;">
+            <h2 class="hero-title" style="font-size: 2.5rem; margin-bottom: 20px;" data-lang-key="contact_title">
+                Записатися на консультацію
+            </h2>
+            <p class="hero-text" data-lang-key="contact_text">
+                Залиште свої контакти, і я зв'яжусь з вами найближчим часом.
+            </p>
 
+            <form id="contactForm" style="display: flex; flex-direction: column; gap: 15px; margin-top: 30px;">
+                <input type="text" id="name" placeholder="Ваше ім'я" required 
+                       style="padding: 15px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit;">
+                
+                <input type="text" id="phone" placeholder="Телефон або Email" required 
+                       style="padding: 15px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit;">
+                
+                <textarea id="message" placeholder="Розкажіть про ваш проєкт" rows="4"
+                          style="padding: 15px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit;"></textarea>
+                
+                <button type="submit" class="btn btn-primary" data-lang-key="btn_send" style="border: none; cursor: pointer;">
+                    Надіслати
+                </button>
+            </form>
+            
+          
+            <p id="formStatus" style="margin-top: 15px; font-weight: 500;"></p>
+        </div>
+    </section>
     <script src="script.js"></script>
 </body>
 </html>

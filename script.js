@@ -56,3 +56,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('preferredLang') || 'uk';
     setLang(savedLang);
 });
+
+// Находим нашу форму по ID
+const contactForm = document.getElementById('contactForm');
+
+// Вешаем на нее событие "отправка"
+contactForm.addEventListener('submit', async function(event) {
+    event.preventDefault(); // Запрещаем браузеру перезагружать страницу
+
+    const formStatus = document.getElementById('formStatus');
+    formStatus.textContent = "Надсилання...";
+    formStatus.style.color = "black";
+
+    // Собираем данные из полей в объект
+    const data = {
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value,
+        message: document.getElementById('message').value
+    };
+
+    try {
+        // Отправляем POST-запрос на наш Java-сервер
+        const response = await fetch('http://localhost:8080/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json' // Говорим, что шлем JSON
+            },
+            body: JSON.stringify(data) // Превращаем объект в JSON-строку
+        });
+
+        // Если сервер ответил успешно (код 200)
+        if (response.ok) {
+            formStatus.textContent = "Дякую! Ваша заявка прийнята.";
+            formStatus.style.color = "green";
+            contactForm.reset(); // Очищаем поля формы
+        } else {
+            formStatus.textContent = "Помилка відправки. Спробуйте пізніше.";
+            formStatus.style.color = "red";
+        }
+    } catch (error) {
+        // Если сервер вообще выключен или недоступен
+        console.error("Ошибка:", error);
+        formStatus.textContent = "Сервер недоступний. Перевірте, чи запущений Java.";
+        formStatus.style.color = "red";
+    }
+});
